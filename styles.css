@@ -1,0 +1,70 @@
+:root{
+  --bg:#f7fafc;
+  --fg:#111827;
+  --muted:#6b7280;
+  --primary:#0ea5e9;
+  --primary-700:#0369a1;
+  --ok:#22c55e;
+  --warn:#f59e0b;
+  --danger:#ef4444;
+  --surface:#ffffff;
+  --border:#e5e7eb;
+}
+
+html, body { height: 100%; }
+body { background: var(--bg); color: var(--fg); margin: 0; font-family: Inter, system-ui, Arial, sans-serif; }
+.container { max-width: 980px; margin: 0 auto; padding: 16px; }
+.header { background: #0c4a6e; color: #fff; padding: 12px 0 16px; box-shadow: inset 0 -1px 0 rgba(255,255,255,.1); }
+.header .back { color: #c7e5ff; text-decoration: none; font-weight: 600; }
+.small { color: #dae9f5; font-size: 13px; }
+
+.overall, .panel { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 12px 16px; }
+.panel { margin: 12px 0; }
+.panel-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; align-items: center; }
+
+.progress-bar { height: 12px; background: #edf2f7; border-radius: 10px; overflow: hidden; }
+.progress-fill { height: 100%; width: 0; background: linear-gradient(90deg, #0ea5e9 0%, #0ea5e9 98%, #fda4af 98.5%, #ffd1a1 100%); transition: width .25s ease; }
+.stats { color: var(--muted); font-size: 14px; margin-top: 6px; }
+.label { color: var(--muted); font-size: 12px; margin-bottom: 6px; }
+
+.topic { border: 1px solid var(--border); border-radius: 10px; padding: 12px 16px; background: var(--surface); }
+.topics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px; }
+.topic h3 { margin: 0 0 4px; font-size: 18px; }
+.topic p { margin: 0 0 8px; color: #374151; }
+.btn { appearance: none; border: 0; background: var(--primary); color: #fff; padding: 10px 14px; border-radius: 10px; font-weight: 700; cursor: pointer; box-shadow: 0 1px 0 rgba(0,0,0,.04); }
+.btn:hover { background: var(--primary-700); }
+.btn-secondary { background: #64748b; }
+.btn-secondary:hover { background: #475569; }
+.btn-danger { background: var(--danger); }
+.btn-danger:hover { filter: brightness(.95); }
+.btn-outline { background: transparent; color: #0b4a6e; border: 2px solid #93c5fd; }
+.btn-outline:hover { background: #e0f2fe; border-color: #60a5fa; }
+.btn-menu { border-radius: 999px; padding: 8px 14px; margin: 8px 0; display: inline-flex; align-items: center; gap: 8px; }
+.btn-group { display: inline-flex; gap: 8px; align-items: center; }
+.panel-actions { display: flex; align-items: center; justify-content: space-between; }
+.panel-actions .btn-group.right { margin-left: auto; }
+
+.question { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 14px 16px; margin: 12px 0; }
+.question h3 { margin: 0 0 8px; font-size: 18px; }
+.question .meta { color: var(--muted); font-size: 13px; margin-bottom: 8px; }
+.options { list-style: none; padding-left: 0; margin: 8px 0; display: grid; gap: 8px; }
+.option { border: 1px solid var(--border); border-radius: 10px; padding: 12px 14px; background: #fcfdff; display: flex; gap: 10px; align-items: flex-start; transition: background .15s ease, box-shadow .15s ease, border-color .15s ease; }
+.option:hover { background: #f4faff; border-color: #bfdbfe; box-shadow: 0 1px 0 rgba(0,0,0,.02); }
+.option input { margin-top: 3px; }
+.actions { display: flex; gap: 10px; margin-top: 8px; }
+.explain { margin-top: 8px; font-size: 14px; }
+.explain.ok { color: #166534; background: #ecfdf5; border-left: 4px solid var(--ok); padding: 8px 10px; border-radius: 6px; }
+.explain.bad { color: #7c2d12; background: #fff7ed; border-left: 4px solid var(--warn); padding: 8px 10px; border-radius: 6px; }
+.answer-block { margin-top: 8px; padding: 10px 12px; background: #f0f9ff; border: 1px solid #dbeafe; border-radius: 8px; }
+.answer-block h4 { margin: 0 0 6px; font-size: 15px; }
+.spacer { height: 6px; }
+
+.actions { display: flex; gap: 8px; }
+.muted { color: var(--muted); }
+.sep { height: 1px; background: var(--border); margin: 8px 0; }
+
+@media (max-width: 560px){
+  .panel-row { grid-template-columns: 1fr; }
+  .panel-actions { flex-direction: column; gap: 8px; align-items: stretch; }
+  .panel-actions .btn-group.right { margin-left: 0; align-self: stretch; justify-content: flex-end; }
+}
